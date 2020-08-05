@@ -1,15 +1,13 @@
 *
     font-family: 'Roboto', sans-serif
-    font-weight: 400
     margin: 0
     padding: 0
     outline: none
     .wrapperAplication
         margin: 0 auto
-        max-width: 60%
+        width: 60%
+        max-width: 1440px
         margin-top: 50px
-        //height: 100vh
-        //background: aqua
         .filterButton
             display: flex
             justify-content: space-between
@@ -18,11 +16,14 @@
                 width: 33%
                 padding: 5px
                 height: 32px
-                border: 0
+                border: 2px solid blue
                 cursor: pointer
-                color: white
-                background: blue
+                color: blue
+                background: white
                 border-radius: 5px
+                &:focus
+                    color: white
+                    background: blue
             .allFilterBtn, .favoritFilterBtn, .doneFilterBtn
                 font-size: 15px
                 font-weight: 700
@@ -34,9 +35,15 @@
             border: 2px solid blue
             border-radius: 8px
             margin: 5px 0
+            &:last-child
+                margin-bottom: 0
             .task
                 cursor: pointer
                 font-size: 20px
+                .taskInSpan
+                    .backlight
+                        color: white
+                        background: blue
             .wrapperRemoveFavorites
                 
                 button
@@ -57,18 +64,22 @@
         justify-content: space-between
         align-items: center
         width: 100%
+        border-bottom: 1px solid grey
+        padding-bottom: 15px
+        margin-bottom: 20px
         .inputTask
             width: 84%
             padding: 0px 10px
-            border: 1px solid black
+            border: 2px solid blue
             height: 30px
-            border-radius: 5px
+            margin: 5px 0
+            border-radius: 8px
             border-top-right-radius: 0
             border-bottom-right-radius: 0
             border-right: 0
         .addBtn
             width: 15%
-            height: 32px
+            height: 34px
             cursor: pointer
             border: 0
             background: blue
@@ -80,6 +91,32 @@
             span
                 font-size: 15px
                 font-weight: 700
-
+    .inputAliveSearch
+        .aliveSearch
+            width: 96%
+            height: 30px
+            padding: 0 10px
+            border: 2px solid blue
+            border-radius: 8px
+            margin: 5px 0
+    .wrapperLogoNameApp
+        display: flex
+        justify-content: center
+        align-items: center
+        border-bottom: 1px solid grey
+        padding-bottom: 10px
+        margin-bottom: 15px
+        h1
+            color: blue
+            font-size: 60px
+            font-weight: 700
+    .wrapperPrintCount
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        p
+            font-size: 18px
+            padding: 5px 0
 .hide
-    display: none
+    display: none !important
