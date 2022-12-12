@@ -4,7 +4,7 @@ class NameApp{
     }
 
     printLogoNameApp(){
-        let divLogoNameApp = document.querySelector('.wrapperAplication');
+        let divLogoNameApp = document.querySelector('.wrapperApplication');
 
         divLogoNameApp.innerHTML +=
             `<div class="wrapperLogoNameApp">

@@ -4,14 +4,14 @@ class Search {
     }
 
     paintInputSearch() {
-        let divInputSearch = document.querySelector('.wrapperAplication');
+        let divInputSearch = document.querySelector('.wrapperApplication');
         divInputSearch.innerHTML +=
             `<div class="inputAliveSearch">
-                <input type="text" class="aliveSearch" id="aliveSearch" placeholder="Найти задачу..." oninput=search.workSerch() />
+                <input type="text" class="aliveSearch" id="aliveSearch" placeholder="Найти задачу..." oninput=search.workSearch() />
             </div>`;
     }
 
-    workSerch() {
+    workSearch() {
         let val = document.querySelector('#aliveSearch').value.trim();
         let aliveSearchItems = document.querySelectorAll('.taskInSpan');
 

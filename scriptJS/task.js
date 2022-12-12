@@ -1,6 +1,6 @@
 class Task {
-    constructor(wrapperAplication) {
-        this.wrapperAplication = document.querySelector(wrapperAplication);
+    constructor(wrapperApplication) {
+        this.wrapperApplication = document.querySelector(wrapperApplication);
         this.pictureInput();
         this.add();
         this.remove();
@@ -8,7 +8,7 @@ class Task {
     }
 
     pictureInput() {
-        let wrapper = this.wrapperAplication;
+        let wrapper = this.wrapperApplication;
 
         let div = document.createElement("div");
         div.setAttribute("class", "wrapperInputTask");
@@ -17,13 +17,10 @@ class Task {
             `<input class="inputTask" type="text" placeholder="Добавить задачу..." />
             <button class="addBtn" id="addBtn"><span>Добавить</span></button>`;
         wrapper.appendChild(div);
-
-        //countTask = new CountTask();
     }
 
     add() {
         document.querySelector(".inputTask").addEventListener('keypress', function (keyPressed) {
-            //console.log(keyPressed.which);
             if (keyPressed.which === 13) {
                 print();
             }
@@ -35,7 +32,7 @@ class Task {
 
         function print() {
             document.querySelector('#aliveSearch').value = "";
-            search.workSerch();
+            search.workSearch();
             if (document.querySelector(".inputTask").value.trim() === "") {
                 console.log("ну ну!");
             }
@@ -61,6 +58,9 @@ class Task {
                 taskDone.strike();
                 task.remove();
                 task.favorites();
+                countTask.valueDoneTask();
+                countTask.valueFavoriteTask();
+                countTask.printCount();
             })
         }
     }
@@ -72,21 +72,23 @@ class Task {
     }
 
     printFavorites(i) {
-        document.querySelector(`#favBtn${i}`).addEventListener('click', (event) => {
+        document.querySelector(`#favBtn${i}`).addEventListener('click', () => {
             document.querySelector('#aliveSearch').value = "";
             let nameTask = document.getElementById(`nameTask${i}`);
-            if (arrTasks[i].favorit === true) {
-                arrTasks[i].favorit = false;
+            if (arrTasks[i].favorite === true) {
+                arrTasks[i].favorite = false;
                 locStor.saveLocStor(arrTasks);
                 nameTask.style.fontWeight = "400";
                 nameTask.style.color = "black";
             }
             else {
-                arrTasks[i].favorit = true;
+                arrTasks[i].favorite = true;
                 locStor.saveLocStor(arrTasks);
                 nameTask.style.fontWeight = "700";
                 nameTask.style.color = "blue";
             }
+            countTask.valueFavoriteTask()
+            countTask.printCount()
         })
     }
 }

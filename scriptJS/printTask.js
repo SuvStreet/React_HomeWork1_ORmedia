@@ -26,7 +26,7 @@ class PrintTask {
     createPrintTask(i, wrapper) {
         wrapper.innerHTML +=
             `<div class="wrapperTask" id="wrapperTaskID${i}">
-                <div class="task" id="taskID${i}" style="font-weight: ${arrTasks[i].favorit === true ? "700" : "400"}; color: ${arrTasks[i].favorit === true ? "blue" : "black"};">
+                <div class="task" id="taskID${i}" style="font-weight: ${arrTasks[i].favorite === true ? "700" : "400"}; color: ${arrTasks[i].favorite === true ? "blue" : "black"};">
                     <span class="taskInSpan" id="nameTask${i}"style="text-decoration: ${arrTasks[i].done === true ? "line-through" : "none"};">
                         ${arrTasks[i].task}
                     </span>
